@@ -1,0 +1,4 @@
+name,version,licenses
+{{- range .Artifacts}}
+{{.Name}},{{.Version}},{{.Licenses | toString | replace "," " "}}
+{{- end}}
