@@ -12,7 +12,7 @@ before_script:
 script: 
   - sudo rm -f travis_wait*
   - sudo chown -R travis:travis data
-  - .travis/git-push.sh
+  - bash .travis/git-push.sh
 
 jobs:
   include:
