@@ -15,7 +15,7 @@ commit_files() {
 
 push_files() {
   git remote add https_push https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/Siddhesh-Ghadi/travis-packages.git > /dev/null 2>&1
-  git pull origin $TRAVIS_BRANCH
+  git pull origin $TRAVIS_BRANCH --rebase
   git push https_push HEAD:$TRAVIS_BRANCH
 }
 

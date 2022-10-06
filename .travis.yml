@@ -25,7 +25,7 @@ jobs:
     - stage: Compare package data
       env: BASE=amd64 NEW=ppc64le DIST=bionic
       language: python
-      before_install: git pull
+      before_install: git pull --rebase
       install: pip3 install pandas
       before_script: python3 main.py -b data/${DIST}/${BASE}_packages.csv -n data/${DIST}/${NEW}_packages.csv -o data/${DIST}
       arch: amd64
