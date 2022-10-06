@@ -48,6 +48,8 @@ print("Data saved to {}".format(file_path))
 # get common packages based on name key: base_data(name) intersection new_data(name) 
 # drop rows which have same versions
 version_mismatch = base_data.merge(new_data, on="name")
+version_mismatch.drop("licenses_x", axis=1, inplace=True)
+version_mismatch.drop("licenses_y", axis=1, inplace=True)
 version_mismatch.drop(version_mismatch[version_mismatch["version_x"] == version_mismatch["version_y"]].index, inplace = True)
 version_mismatch.rename(columns={'version_x': 'base_data', 'version_y': 'new_data'}, inplace=True)
 
