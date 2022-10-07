@@ -10,7 +10,8 @@ setup_git() {
 # [skip travis] ensures that the commits made via CI will not trigger travis job
 commit_files() {
   git add .
-  git commit --message "[skip travis] Data from travis job $TRAVIS_JOB_WEB_URL"
+  # TODO: find a better solution to exit with 0 if there is nothing to commit
+  git commit --message "[skip travis] Data from travis job $TRAVIS_JOB_WEB_URL" || true
 }
 
 push_files() {
