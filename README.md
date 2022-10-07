@@ -1,6 +1,6 @@
 # Travis Packages
 
-This repo holds code to generate & compare list of packages/tools installed in 2 different linux environments. 
+This repo holds code to generate & compare list of packages/tools installed in 2 different linux environments. The generated data is by default stored in [data](./data/) directory.
 
 ## Generate Data
 
